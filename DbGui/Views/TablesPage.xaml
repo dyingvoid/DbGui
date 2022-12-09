@@ -1,0 +1,39 @@
+﻿<Page x:Class="DbGui.Views.TablesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:DbGui.Views"
+      mc:Ignorable="d"
+      Title="TablesPage" Height="Auto" Width="Auto">
+    <Grid x:Name="Outer">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Rectangle Grid.Column="0" Grid.RowSpan="2">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#393E46"></SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        <Grid Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="Inner">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <Button Grid.Row="0" Width="{Binding Path=ActualWidth, ElementName=Outer}" Height="40" 
+                    Foreground="#00ADB5" Background="#00ADB5"></Button>
+            <Button Grid.Row="1" Width="{Binding Path=ActualWidth, ElementName=Outer}" Height="40" 
+                    Foreground="#00ADB5" Background="#00ADB5"></Button>
+            <Button Grid.Row="2" Width="{Binding Path=ActualWidth, ElementName=Outer}" Height="40" 
+                    Foreground="#00ADB5" Background="#00ADB5"></Button>
+        </Grid>
+        
+        <Grid Grid.Column="1"></Grid>
+        
+    </Grid>
+</Page>

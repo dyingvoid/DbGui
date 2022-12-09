@@ -9,11 +9,12 @@
         Title="MainWindow" Height="450" Width="800"
         WindowStyle="None"
         AllowsTransparency="True"
-        Opacity="0.95">
+        Opacity="0.95"
+        ResizeMode="CanResizeWithGrip">
     
     <Window.Background>
         <SolidColorBrush Color="#222831"></SolidColorBrush>
     </Window.Background>
     
-    <Frame Source="StartPage.xaml"></Frame>
+    <Frame Source="TablesPage.xaml" Height="Auto" Width="Auto"></Frame>
 </Window>
