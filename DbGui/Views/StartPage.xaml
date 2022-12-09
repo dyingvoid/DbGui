@@ -1,0 +1,32 @@
+<Page x:Class="DbGui.Views.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:DbGui.Views"
+      mc:Ignorable="d"
+      Title="StartPage" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Viewbox MaxHeight="35" Grid.Row="0">
+            <TextBlock Foreground="#EEEEEE">Choose VladDB file to open database.</TextBlock>
+        </Viewbox>
+        
+        <ScrollViewer Grid.Row="1">
+            <TextBlock TextWrapping="Wrap" Foreground="Red">TEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXT</TextBlock>
+        </ScrollViewer>
+        
+        <Button Grid.Row="2" Foreground="#00ADB5" 
+                      Background="#00ADB5"
+                      Width="120"
+                      Height="60">
+            <TextBlock FontSize="30" Foreground="#EEEEEE">Choose</TextBlock>
+        </Button>
+        
+    </Grid>
+</Page>
