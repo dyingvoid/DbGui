@@ -21,31 +21,32 @@ public class StartPageViewModel
         set
         {
             _searchButton = value;
-            _searchButton.Click += SearchButtonClicked;
+            _searchButton.Click += OpenVladDbFile;
         }
     }
-
+    
+    public VladDbFile? DbFile { get; set; }
     public TextBlock ExceptionTextBlock { get; set; }
 
-    private void SearchButtonClicked(object sender, RoutedEventArgs eventArgs)
+    private void OpenVladDbFile(object sender, RoutedEventArgs eventArgs)
     {
         var dbFileDialog = new OpenFileDialog();
-        if (dbFileDialog.ShowDialog() == true)
-        {
-            try
-            {
-                var vladDb = new VladDbFile(dbFileDialog.FileName);
-                ChangeExceptionText(vladDb.CsvFolder.FullName + " " + vladDb.JsonStructure.FullName);
-            }
-            catch (Exception ex)
-            {
-                ChangeExceptionText($"{ex.Source} {ex.Message}");
-            }
-        }
-        else
+        
+        if (dbFileDialog.ShowDialog() != true)
         {
             ChangeExceptionText("File was not opened.");
+            return;
         }
+        
+        try
+        {
+            DbFile = new VladDbFile(dbFileDialog.FileName);
+        }
+        catch (Exception ex)
+        {
+            ChangeExceptionText($"{ex.Source} {ex.Message}");
+        }
+        
     }
 
     private void ChangeExceptionText(string exceptionInformation)

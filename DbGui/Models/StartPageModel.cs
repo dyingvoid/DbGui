@@ -22,5 +22,10 @@ public class VladDbFile
 
         CsvFolder = new DirectoryInfo(paths[0]);
         JsonStructure = new FileInfo(paths[1]);
+
+        if (!CsvFolder.Exists)
+            throw new Exception("Folder with csv tables does not exist.");
+        if (!JsonStructure.Exists)
+            throw new Exception("Json structure does not exist.");
     }
 }
