@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:DbGui.Views"
+      xmlns:uc="clr-namespace:DbGui.Views"
       mc:Ignorable="d"
       Title="TablesPage" Height="Auto" Width="Auto">
     <Grid x:Name="Outer">
@@ -33,7 +34,6 @@
                     Foreground="#00ADB5" Background="#00ADB5"></Button>
         </Grid>
         
-        <Grid Grid.Column="1"></Grid>
-        
+        <local:TableListUserControl Grid.Column="1"> </local:TableListUserControl>
     </Grid>
 </Page>
