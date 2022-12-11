@@ -18,13 +18,14 @@
         </Viewbox>
         
         <ScrollViewer Grid.Row="1">
-            <TextBlock TextWrapping="Wrap" Foreground="Red">TEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXT</TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="Red" Name="ExceptionTextBlock"></TextBlock>
         </ScrollViewer>
         
         <Button Grid.Row="2" Foreground="#00ADB5" 
                       Background="#00ADB5"
                       Width="120"
-                      Height="60">
+                      Height="60"
+                      Name="SearchButton">
             <TextBlock FontSize="30" Foreground="#EEEEEE">Choose</TextBlock>
         </Button>
         

@@ -16,5 +16,5 @@
         <SolidColorBrush Color="#222831"></SolidColorBrush>
     </Window.Background>
     
-    <Frame Source="TablesPage.xaml" Height="Auto" Width="Auto"></Frame>
+    <Frame Source="StartPage.xaml" Height="Auto" Width="Auto"></Frame>
 </Window>
