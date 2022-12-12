@@ -16,11 +16,42 @@ public static class TableEditorReflectionTypeCreator
         {
             tableObject.GetType().InvokeMember(fieldName,
                 BindingFlags.Instance | BindingFlags.Public | BindingFlags.SetProperty,
-                Type.DefaultBinder, tableObject, new object[]{val});
+                Type.DefaultBinder, tableObject, new object[]{});
             
             index++;
         }
     }
+
+    public static void FillObjectWithDataMetaData(object? tableObject,
+        Dictionary<string, Type> csvTableStructure,
+        List<string> csvTableStrokeData)
+    {
+        int index = 0;
+
+        foreach (var (fieldName, fieldType) in csvTableStructure)
+        {
+            var propertyInfo = tableObject.GetType().GetProperty(fieldName);
+            if (propertyInfo != null && propertyInfo.CanWrite)
+            {
+                if (fieldType != typeof(string))
+                {
+                    object? value = DbReflection.CastToType(fieldType, csvTableStrokeData[index]);
+                    // So cast returns string casted to T?, then results upcasts to object?
+                    // How does SetValue sets object? value to T? property ?
+                    propertyInfo.SetValue(tableObject, value, null);
+                }
+                else
+                {
+                    propertyInfo.SetValue(tableObject, csvTableStrokeData[index], null);
+                }
+
+                index++;
+            }
+        }
+    }
+    
+    
+    
     public static object? CreateNewObject(Dictionary<string, Type> csvTableStructure)
         {
             var myType = CompileResultType(csvTableStructure);

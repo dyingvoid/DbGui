@@ -33,28 +33,10 @@ public class TableEditorViewModel
         foreach (var stroke in table)
         {
             var tableObject = TableEditorReflectionTypeCreator.CreateNewObject(table.Types);
-            TableEditorReflectionTypeCreator.FillObjectWithData(tableObject, table.Types, stroke);
+            TableEditorReflectionTypeCreator.FillObjectWithDataMetaData(tableObject, table.Types, stroke);
             c.Add(tableObject);
         }
 
         return c;
-    }
-}
-
-public class MyType
-{
-    public string Name { get; set; }
-    public string AuthorName { get; set; }
-    public int YearPublished { get; set; }
-    public int Case { get; set; }
-    public int Shelf { get; set; }
-
-    public MyType(List<string?> list)
-    {
-        Name = list[0];
-        AuthorName = list[1];
-        YearPublished = int.Parse(list[2]);
-        Case = int.Parse(list[3]);
-        Shelf = int.Parse(list[4]);
     }
 }
