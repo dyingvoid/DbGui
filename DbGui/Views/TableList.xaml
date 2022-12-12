@@ -5,12 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:DbGui.Views"
              xmlns:collections="clr-namespace:System.Collections;assembly=System.Runtime"
+             xmlns:data="clr-namespace:System.Data;assembly=System.Data.Common"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <DataGrid x:Name="TableGrid">
-            <DataGridTextColumn Header="Test" Width="60"></DataGridTextColumn>
-            <DataGridTextColumn Header="Second" Width="50"></DataGridTextColumn>
+        <DataGrid Name="DataGrid" AutoGenerateColumns="True">
+            
         </DataGrid>
     </Grid>
 </UserControl>
