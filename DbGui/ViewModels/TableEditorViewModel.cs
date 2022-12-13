@@ -32,8 +32,8 @@ public class TableEditorViewModel
         
         foreach (var stroke in table)
         {
-            var tableObject = TableEditorReflectionTypeCreator.CreateNewObject(table.Types);
-            TableEditorReflectionTypeCreator.FillObjectWithDataMetaData(tableObject, table.Types, stroke);
+            var tableObject = DbReflection.CreateNewObject(table.Types);
+            DbReflection.FillObjectWithDataMetaData(tableObject, table.Types, stroke);
             c.Add(tableObject);
         }
 
