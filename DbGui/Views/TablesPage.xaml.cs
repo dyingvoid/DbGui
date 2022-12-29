@@ -8,5 +8,6 @@ public partial class TablesPage : Page
     public TablesPage()
     {
         InitializeComponent();
+        DataContext = new TablesPageViewModel();
     }
 }

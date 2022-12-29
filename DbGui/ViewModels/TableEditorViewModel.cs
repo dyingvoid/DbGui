@@ -28,15 +28,15 @@ public class TableEditorViewModel
 
     private ObservableCollection<object?> GenerateCollection(CsvTable table)
     {
-        var c = new ObservableCollection<object?>();
+        var obsCollection = new ObservableCollection<object?>();
         
         foreach (var stroke in table)
         {
             var tableObject = DbReflection.CreateNewObject(table.Types);
-            DbReflection.FillObjectWithDataMetaData(tableObject, table.Types, stroke);
-            c.Add(tableObject);
+            DbReflection.FillObjectWithData(tableObject, table.Types, stroke);
+            obsCollection.Add(tableObject);
         }
 
-        return c;
+        return obsCollection;
     }
 }
